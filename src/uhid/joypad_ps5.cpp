@@ -240,7 +240,7 @@ PS5Joypad::~PS5Joypad() {
 }
 
 Result<PS5Joypad> PS5Joypad::create(const DeviceDefinition &device) {
-  bool use_bluetooth = true; // TODO: expose this
+  bool use_bluetooth = false; // TODO: expose this
 
   auto def = uhid::DeviceDefinition{
       .name = device.name,
