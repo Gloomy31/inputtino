@@ -72,7 +72,7 @@ generate_export_header(libinputtino EXPORT_FILE_NAME include/inputtino/${export_
 # Options
 #----------------------------------------------------------------------------------------------------------------------
 
-option(BUILD_C_BINDINGS "Build C bindings" OFF)
+option(BUILD_C_BINDINGS "Build C bindings" ON)
 option(LIBINPUTTINO_INSTALL "Generate the install target" OFF)
 option(USE_UHID "Add uhid implementation for advanced DualSense features" ON)
 
