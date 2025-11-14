@@ -462,6 +462,14 @@ void PS5Joypad::set_pressed_buttons(unsigned int pressed) {
       this->_state->current_state.buttons[2] |= uhid::PS_HOME;
     if (MISC_FLAG & pressed)
       this->_state->current_state.buttons[2] |= uhid::MIC_MUTE;
+    if (PADDLE1_FLAG & pressed)
+        this->_state->current_state.buttons[2] |= uhid::LEFT_FUNCTION;
+    if (PADDLE2_FLAG & pressed)
+        this->_state->current_state.buttons[2] |= uhid::RIGHT_FUNCTION;
+    if (PADDLE3_FLAG & pressed)
+        this->_state->current_state.buttons[2] |= uhid::LEFT_PADDLE;
+    if (PADDLE4_FLAG & pressed)
+        this->_state->current_state.buttons[2] |= uhid::RIGHT_PADDLE;
   }
   send_report(*this->_state);
 }

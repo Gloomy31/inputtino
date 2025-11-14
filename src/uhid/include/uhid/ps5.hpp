@@ -415,7 +415,12 @@ enum DS_BUTTONS1 : uint8_t {
 enum DS_BUTTONS2 : uint8_t {
   PS_HOME = 0x01,
   TOUCHPAD = 0x02,
-  MIC_MUTE = 0x04
+  MIC_MUTE = 0x04,
+  // Unused bit
+  LEFT_FUNCTION = 0x10,
+  RIGHT_FUNCTION = 0x20,
+  LEFT_PADDLE = 0x40,
+  RIGHT_PADDLE = 0x80
 };
 
 enum HAT_STATES : uint8_t {
