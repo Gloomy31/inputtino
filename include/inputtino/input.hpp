@@ -380,7 +380,7 @@ class PS5Joypad : public Joypad {
 public:
   static Result<PS5Joypad>
   create(const DeviceDefinition &device = {
-             .name = "Wolf DualSense (virtual) pad", .vendor_id = 0x054C, .product_id = 0x0CE6, .version = 0x8111});
+             .name = "Wolf DualSense (virtual) pad", .vendor_id = 0x054C, .product_id = 0x0CE6, .version = 0x8111}, bool bt = true);
   PS5Joypad(PS5Joypad &&j) noexcept : _state(nullptr) {
     std::swap(j._state, _state);
   }

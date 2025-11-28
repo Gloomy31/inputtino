@@ -32,6 +32,7 @@ static constexpr auto lookup_table = generate_table();
 static constexpr uint32_t CRC32(const unsigned char *buffer, uint32_t length, uint32_t seed = 0) {
   uint32_t c = seed ^ 0xFFFFFFFF;
   for (size_t i = 0; i < length; ++i) {
+    // Segfaulting when connecting to https://ds-edge-configurator.com/ as Dualsense Edge
     c = lookup_table[(c ^ buffer[i]) & 0xFF] ^ (c >> 8);
   }
   return c ^ 0xFFFFFFFF;

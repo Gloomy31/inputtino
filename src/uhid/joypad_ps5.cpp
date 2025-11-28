@@ -239,8 +239,8 @@ PS5Joypad::~PS5Joypad() {
   }
 }
 
-Result<PS5Joypad> PS5Joypad::create(const DeviceDefinition &device) {
-  bool use_bluetooth = false; // TODO: expose this
+Result<PS5Joypad> PS5Joypad::create(const DeviceDefinition &device, bool bt) {
+  bool use_bluetooth = bt; // TODO: I mean, it is technically exposed now, but I'm not sure that this is the way to do it
 
   auto def = uhid::DeviceDefinition{
       .name = device.name,

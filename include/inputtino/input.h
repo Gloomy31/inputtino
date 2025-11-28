@@ -265,6 +265,7 @@ struct InputtinoPS5Joypad;
 typedef struct InputtinoPS5Joypad InputtinoPS5Joypad;
 
 LIBINPUTTINO_EXPORT InputtinoPS5Joypad *inputtino_joypad_ps5_create(const InputtinoDeviceDefinition *device,
+                                                       const bool bt,
                                                        const InputtinoErrorHandler *eh);
 
 LIBINPUTTINO_EXPORT char **inputtino_joypad_ps5_get_nodes(InputtinoPS5Joypad *joypad, int *num_nodes);

@@ -2,6 +2,7 @@
 #include <inputtino/input.h>
 
 InputtinoPS5Joypad *inputtino_joypad_ps5_create(const InputtinoDeviceDefinition *device,
+                                                const bool bt,
                                                 const InputtinoErrorHandler *eh) {
   auto joypad_ = inputtino::PS5Joypad::create({
       .name = device->name ? device->name : "Inputtino virtual device",
@@ -10,7 +11,8 @@ InputtinoPS5Joypad *inputtino_joypad_ps5_create(const InputtinoDeviceDefinition 
       .version = device->version,
       .device_phys = device->device_phys ? device->device_phys : "00:11:22:33:44:55",
       .device_uniq = device->device_uniq ? device->device_uniq : "00:11:22:33:44:55",
-  });
+  },
+  bt);
   if (joypad_) {
     return reinterpret_cast<InputtinoPS5Joypad *>(new inputtino::PS5Joypad(std::move(*joypad_)));
   } else {
